@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="394.0" prefWidth="212.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="60.0" prefWidth="184.0" text="EAGLE  RESTAURANT" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Segoe UI Bold" size="24.0" />
+         </font>
+      </Label>
+      <Text layoutX="11.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="---------------------------------------" wrappingWidth="190.37188720703125">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Text>
+      <Label layoutX="62.0" layoutY="90.0" prefHeight="60.0" prefWidth="87.0" text="BOOKING" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+      </Label>
+      <Text layoutX="11.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="---------------------------------------" wrappingWidth="190.37188720703125">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Text>
+      <Label layoutX="11.0" layoutY="162.0" text="Table : ">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="180.0" text="Bill ID :">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="3.0" />
+         </padding>
+      </Label>
+      <Label layoutX="125.0" layoutY="180.0" text="24.11.2022">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="3.0" />
+         </padding>
+      </Label>
+      <Label layoutX="58.0" layoutY="160.0" text="1">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="3.0" />
+         </padding>
+      </Label>
+      <Label layoutX="62.0" layoutY="180.0" text="1">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="3.0" />
+         </padding>
+      </Label>
+      <Text layoutX="11.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="---------------------------------------" wrappingWidth="190.37188720703125">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Text>
+      <Label layoutX="11.0" layoutY="220.0" text="Name">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="3.0" />
+         </padding>
+      </Label>
+      <Label layoutX="111.0" layoutY="220.0" text="QTY">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="3.0" />
+         </padding>
+      </Label>
+      <Label layoutX="161.0" layoutY="220.0" text="Total">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="3.0" />
+         </padding>
+      </Label>
+      <Text layoutX="11.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="---------------------------------------" wrappingWidth="190.37188720703125">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Text>
+      <Label layoutX="26.0" layoutY="333.0" prefHeight="46.0" prefWidth="159.0" text="Please come on the day of reservation." textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="3.0" />
+         </padding>
+      </Label>
+   </children>
+</AnchorPane>

@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controllers implements Initializable {
+public class MainControllers implements Initializable {
 
     @FXML
     private BorderPane bpMain;
@@ -63,7 +63,7 @@ public class Controllers implements Initializable {
         loadPage("AboutPage");
     }
 
-    private void loadPage(String page){
+    public void loadPage(String page){
         Parent root = null;
 
         try {
@@ -71,7 +71,6 @@ public class Controllers implements Initializable {
         } catch (IOException e) {
 
         }
-
         bpMain.setCenter(root);
     }
 
