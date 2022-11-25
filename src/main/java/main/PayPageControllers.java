@@ -4,13 +4,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 
-public class CheckOutControllers {
+public class PayPageControllers {
 
         @FXML
-        private Button CheckOut;
+        private Button Pay;
 
         @FXML
-        void CheckOutClicked(MouseEvent event) {
+        void PayClick(MouseEvent event) {
 
         }
 }

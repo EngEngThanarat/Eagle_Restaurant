@@ -55,7 +55,7 @@ public class MainControllers implements Initializable {
 
     @FXML
     void CheckOutClick(MouseEvent event) {
-        loadPage("CheckOutPage");
+        loadPage("ListCheckBillPage");
     }
 
     @FXML
