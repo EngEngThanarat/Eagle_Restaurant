@@ -3,16 +3,23 @@ package main.Controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TextField;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 
 public class MakeReservationControllers {
+
+    BookingReceipt br = new BookingReceipt();
+    @FXML
+    private DatePicker ChooseDate;
     @FXML
     private Button Confirm;
 
@@ -68,8 +75,30 @@ public class MakeReservationControllers {
     private Button orderWater3;
 
     @FXML
-    void ConfirmClick(MouseEvent event) {
+    void ConfirmClick(MouseEvent event) throws IOException {
+    /*    ChooseDate.getValue();
+        LocalDate date = ChooseDate.getValue();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+        String showDate = dateFormat.format(date);
 
+        String name = Name.getText();
+        String number = Telephone.getText();
+        String HowMany = CustomerNumber.getText();
+
+        br.CustomerName.setText(name);
+        br.DateNumber.setText(showDate);
+        br.TableNumber.setText(HowMany);
+        br.TableNumber.setText(number); */
+
+        Parent root = null;
+
+        root = FXMLLoader.load(getClass().getResource("Booking.fxml"));
+        Scene scene = new Scene(root);
+
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML

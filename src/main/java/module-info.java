@@ -5,4 +5,6 @@ module main.eagle_restaurant {
 
     opens main.Controllers to javafx.fxml;
     exports main.Controllers;
+    exports main.Code;
+    opens main.Code to javafx.fxml;
 }

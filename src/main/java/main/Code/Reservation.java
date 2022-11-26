@@ -1,4 +1,4 @@
-package main.Controllers;
+package main.Code;
 
 import main.Code.Customer;
 import main.Code.Menu;

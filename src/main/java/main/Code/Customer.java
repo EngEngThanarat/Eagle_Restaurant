@@ -1,7 +1,5 @@
 package main.Code;
 
-import main.Controllers.Reservation;
-
 import java.util.Date;
 import java.util.UUID;
 public class Customer {
