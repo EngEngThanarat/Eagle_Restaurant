@@ -30,11 +30,9 @@ public class Main extends Application {
                 stage.setY(event.getScreenY() - y);
             });
             stage.show();
-        }catch (Exception e){
+        }catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
-
     }
 
     public static void main(String[] args) {

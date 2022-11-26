@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controllers.ManageMenuControllers">
+   <children>
+      <Pane layoutX="-1.0" layoutY="-8.0" prefHeight="66.0" prefWidth="795.0" style="-fx-background-color: #020C1D;">
+         <children>
+            <Label layoutX="14.0" layoutY="13.0" prefHeight="40.0" text="Manage Menu" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="556.0" prefHeight="572.0" prefWidth="239.0" style="-fx-background-color: #020C1D;">
+         <children>
+            <TextField fx:id="searchField" layoutX="14.0" layoutY="24.0" prefHeight="25.0" prefWidth="156.0" stylesheets="@../../CSS/fullpackstyling.css" />
+            <Label layoutX="14.0" layoutY="77.0" text="ชื่อเมนู" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="NameMenu" layoutX="11.0" layoutY="111.0" prefHeight="25.0" prefWidth="218.0" />
+            <Button fx:id="AddMenu" layoutX="14.0" layoutY="503.0" mnemonicParsing="false" onMouseClicked="#AddMenu" prefHeight="40.0" prefWidth="94.0" styleClass="button3" stylesheets="@../../CSS/fullpackstyling.css" text="Add Menu" />
+            <Button layoutX="174.0" layoutY="24.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="59.0" styleClass="button3" stylesheets="@../../CSS/fullpackstyling.css" text="Search" />
+            <Label layoutX="14.0" layoutY="147.0" text="ประเภทเมนู" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ChoiceBox layoutX="11.0" layoutY="182.0" prefHeight="25.0" prefWidth="218.0" style="-fx-background-color: #FFFF;" />
+            <Label layoutX="14.0" layoutY="218.0" text="ราคา" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="price" layoutX="11.0" layoutY="251.0" prefHeight="25.0" prefWidth="218.0" />
+            <Button fx:id="AddMenu1" layoutX="123.0" layoutY="503.0" mnemonicParsing="false" onMouseClicked="#AddMenu" prefHeight="40.0" prefWidth="94.0" styleClass="button4" stylesheets="@../../CSS/fullpackstyling.css" text="Delete Menu" />
+         </children>
+      </Pane>
+      <TableView layoutY="58.0" prefHeight="510.0" prefWidth="555.0" stylesheets="@../../CSS/fullpackstyling.css">
+        <columns>
+          <TableColumn prefWidth="75.0" text="ชื่อเมนู" />
+          <TableColumn prefWidth="75.0" text="ประเภท" />
+            <TableColumn prefWidth="75.0" text="ราคา" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</AnchorPane>
