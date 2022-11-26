@@ -3,6 +3,6 @@ module main.eagle_restaurant {
     requires javafx.fxml;
 
 
-    opens main to javafx.fxml;
-    exports main;
+    opens main.Controllers to javafx.fxml;
+    exports main.Controllers;
 }

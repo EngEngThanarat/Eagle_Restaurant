@@ -45,7 +45,7 @@
             <TextField fx:id="CustomerNumber" layoutX="11.0" layoutY="215.0" prefHeight="25.0" prefWidth="218.0" />
             <ListView layoutX="11.0" layoutY="259.0" prefHeight="168.0" prefWidth="218.0" />
             <ScrollBar layoutX="218.0" layoutY="259.0" orientation="VERTICAL" prefHeight="168.0" prefWidth="14.0" />
-            <Button fx:id="Confirm" layoutX="42.0" layoutY="499.0" mnemonicParsing="false" onMouseClicked="#ConfirmClick" prefHeight="40.0" prefWidth="156.0" styleClass="button3" stylesheets="@../CSS/fullpackstyling.css" text="Comfirm" />
+            <Button fx:id="Confirm" layoutX="42.0" layoutY="499.0" mnemonicParsing="false" onMouseClicked="#ConfirmClick" prefHeight="40.0" prefWidth="156.0" styleClass="button3" stylesheets="@../../CSS/fullpackstyling.css" text="Comfirm" />
             <Label layoutX="14.0" layoutY="447.0" text="ราคา" textFill="WHITE">
                <font>
                   <Font size="18.0" />
@@ -63,7 +63,7 @@
             </Label>
          </children>
       </Pane>
-      <TabPane layoutY="58.0" prefHeight="508.0" prefWidth="558.0" stylesheets="@../CSS/fullpackstyling.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutY="58.0" prefHeight="508.0" prefWidth="558.0" stylesheets="@../../CSS/fullpackstyling.css" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab fx:id="MainDish" text="main.Controllers.Main">
                <content>

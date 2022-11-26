@@ -18,13 +18,13 @@
                <children>
                   <ImageView fitHeight="172.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../res/logo.png" />
+                        <Image url="@../../res/logo.png" />
                      </image>
                      <VBox.margin>
                         <Insets bottom="30.0" top="30.0" />
                      </VBox.margin>
                   </ImageView>
-                  <Button fx:id="Dashboard" mnemonicParsing="false" onMouseClicked="#DashBoardClick" prefHeight="52.0" prefWidth="256.0" styleClass="button1" stylesheets="@../CSS/fullpackstyling.css" text="DASHBOARD" textAlignment="CENTER" textFill="#fcfcfc">
+                  <Button fx:id="Dashboard" mnemonicParsing="false" onMouseClicked="#DashBoardClick" prefHeight="52.0" prefWidth="256.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="DASHBOARD" textAlignment="CENTER" textFill="#fcfcfc">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -32,7 +32,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="Reservation" mnemonicParsing="false" onMouseClicked="#ReservationClicked" prefHeight="52.0" prefWidth="256.0" styleClass="button1" stylesheets="@../CSS/fullpackstyling.css" text="RESERVATION" textAlignment="CENTER" textFill="#fcfcfc">
+                  <Button fx:id="Reservation" mnemonicParsing="false" onMouseClicked="#ReservationClicked" prefHeight="52.0" prefWidth="256.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="RESERVATION" textAlignment="CENTER" textFill="#fcfcfc">
                      <font>
                         <Font name="Segoe UI Semibold" size="24.0" />
                      </font>
@@ -40,7 +40,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="Check_Out" mnemonicParsing="false" onMouseClicked="#CheckOutClick" prefHeight="52.0" prefWidth="256.0" styleClass="button1" stylesheets="@../CSS/fullpackstyling.css" text="CHECK OUT" textAlignment="CENTER" textFill="#fcfcfc">
+                  <Button fx:id="Check_Out" mnemonicParsing="false" onMouseClicked="#CheckOutClick" prefHeight="52.0" prefWidth="256.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="CHECK OUT" textAlignment="CENTER" textFill="#fcfcfc">
                      <font>
                         <Font name="Segoe UI Semibold" size="24.0" />
                      </font>
@@ -48,7 +48,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="About" mnemonicParsing="false" onMouseClicked="#AboutClicked" prefHeight="52.0" prefWidth="256.0" styleClass="button1" stylesheets="@../CSS/fullpackstyling.css" text="ABOUT" textAlignment="CENTER" textFill="#fcfcfc">
+                  <Button fx:id="About" mnemonicParsing="false" onMouseClicked="#AboutClicked" prefHeight="52.0" prefWidth="256.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="ABOUT" textAlignment="CENTER" textFill="#fcfcfc">
                      <font>
                         <Font name="Segoe UI Semibold" size="24.0" />
                      </font>
@@ -61,7 +61,7 @@
                      <graphic>
                         <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../res/Close.png" />
+                              <Image url="@../../res/Close.png" />
                            </image>
                         </ImageView>
                      </graphic>

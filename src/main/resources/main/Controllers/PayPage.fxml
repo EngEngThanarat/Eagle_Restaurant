@@ -33,7 +33,7 @@
                   </Pane>
                   <Pane prefHeight="518.0" prefWidth="171.0" style="-fx-background-color: #020C1D;">
                      <children>
-                        <Button fx:id="Pay" layoutX="20.0" layoutY="451.0" mnemonicParsing="false" onMouseClicked="#PayClick" prefHeight="44.0" prefWidth="128.0" styleClass="button4" stylesheets="@../CSS/fullpackstyling.css" text="PAY">
+                        <Button fx:id="Pay" layoutX="20.0" layoutY="451.0" mnemonicParsing="false" onMouseClicked="#PayClick" prefHeight="44.0" prefWidth="128.0" styleClass="button4" stylesheets="@../../CSS/fullpackstyling.css" text="PAY">
                            <font>
                               <Font name="Segoe UI Bold" size="18.0" />
                            </font>

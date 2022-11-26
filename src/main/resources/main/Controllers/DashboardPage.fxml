@@ -15,7 +15,7 @@
    <children>
       <Pane layoutX="6.0" layoutY="7.0" prefHeight="310.0" prefWidth="780.0" style="-fx-background-color: #020C1D;">
          <children>
-            <TableView layoutX="22.0" layoutY="55.0" prefHeight="200.0" prefWidth="739.0" stylesheets="@../CSS/fullpackstyling.css">
+            <TableView layoutX="22.0" layoutY="55.0" prefHeight="200.0" prefWidth="739.0" stylesheets="@../../CSS/fullpackstyling.css">
                <columns>
                   <TableColumn prefWidth="233.33" text="วันที่" />
                   <TableColumn prefWidth="233.33" text="ยอดขาย" />
@@ -30,8 +30,8 @@
                   <Font name="Segoe UI" size="24.0" />
                </font>
             </Text>
-            <ComboBox layoutX="552.0" layoutY="14.0" prefHeight="25.0" prefWidth="196.0" promptText="Select Month" styleClass="combo-box" stylesheets="@../CSS/fullpackstyling.css" />
-            <Button layoutX="676.0" layoutY="266.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" styleClass="button2" stylesheets="@../CSS/fullpackstyling.css" text="Print" textAlignment="CENTER" textFill="WHITE">
+            <ComboBox layoutX="552.0" layoutY="14.0" prefHeight="25.0" prefWidth="196.0" promptText="Select Month" styleClass="combo-box" stylesheets="@../../CSS/fullpackstyling.css" />
+            <Button layoutX="676.0" layoutY="266.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" styleClass="button2" stylesheets="@../../CSS/fullpackstyling.css" text="Print" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>

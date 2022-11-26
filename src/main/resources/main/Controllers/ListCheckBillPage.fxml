@@ -37,14 +37,14 @@
                   </Label>
                </children>
             </HBox>
-            <TableView prefHeight="500.0" prefWidth="793.0" stylesheets="@../CSS/fullpackstyling.css" GridPane.rowIndex="1">
+            <TableView prefHeight="500.0" prefWidth="793.0" stylesheets="@../../CSS/fullpackstyling.css" GridPane.rowIndex="1">
                <columns>
                   <TableColumn prefWidth="433.59998166561127" text="ชื่อลูกค้า" />
                   <TableColumn prefWidth="198.39999389648438" text="หมายเลขติดต่อ" />
                   <TableColumn minWidth="0.0" prefWidth="161.60001220703123" text="วันที่จอง" />
                </columns>
             </TableView>
-            <Button fx:id="CheckOut" mnemonicParsing="false" onMouseClicked="#CheckOutClicked" prefHeight="40.0" prefWidth="234.0" styleClass="button3" stylesheets="@../CSS/fullpackstyling.css" text="Check Out" textAlignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="CheckOut" mnemonicParsing="false" onMouseClicked="#CheckOutClicked" prefHeight="40.0" prefWidth="234.0" styleClass="button3" stylesheets="@../../CSS/fullpackstyling.css" text="Check Out" textAlignment="CENTER" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="280.0" />
                </GridPane.margin>
