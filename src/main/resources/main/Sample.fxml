@@ -24,7 +24,7 @@
                         <Insets bottom="30.0" top="30.0" />
                      </VBox.margin>
                   </ImageView>
-                  <Button fx:id="Dashboard" mnemonicParsing="false" onMouseClicked="#DachBoardClick" prefHeight="52.0" prefWidth="256.0" styleClass="button1" stylesheets="@../CSS/fullpackstyling.css" text="DASHBOARD" textAlignment="CENTER" textFill="#fcfcfc">
+                  <Button fx:id="Dashboard" mnemonicParsing="false" onMouseClicked="#DashBoardClick" prefHeight="52.0" prefWidth="256.0" styleClass="button1" stylesheets="@../CSS/fullpackstyling.css" text="DASHBOARD" textAlignment="CENTER" textFill="#fcfcfc">
                      <font>
                         <Font size="24.0" />
                      </font>

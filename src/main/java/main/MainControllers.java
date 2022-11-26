@@ -38,13 +38,13 @@ public class MainControllers implements Initializable {
         try {
             parent = FXMLLoader.load(getClass().getResource("DashboardPage.fxml"));
         }catch (IOException e){
-
+            e.printStackTrace();
         }
         bpMain.setCenter(parent);
     }
 
     @FXML
-    void DachBoardClick(MouseEvent event) {
+    void DashBoardClick(MouseEvent event) {
         loadPage("DashboardPage");
     }
 
