@@ -13,9 +13,14 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import main.Code.*;
 import main.Code.Menu;
+import main.Sql.DB_Connection;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
@@ -145,24 +150,58 @@ public class MakeReservationControllers {
             lineItems[i] = new LineItem(menuName, menuAmount, price);
         }
 
-        booking in = new booking( new Date(), lineItems,Name.getText(),Telephone.getText(),date);
-        // load next page
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Booking.fxml"));
-        BookingReceipt br = new BookingReceipt(in);
-        loader.setController(br);
-        Scene scene = new Scene(loader.load());
-        Stage popup = new Stage();
-        popup.initStyle(StageStyle.TRANSPARENT);
-        popup.setScene(scene);
-        popup.show();
+        ZoneId defaultZoneId = ZoneId.systemDefault();
+        Date d = Date.from(date.atStartOfDay(defaultZoneId).toInstant());
+        java.sql.Date sqlDate = new java.sql.Date(d.getTime());
+
+        String sql = String.format("SELECT `Table` FROM receive WHERE `Date` = '%s' ORDER BY `Table` DESC ;",sqlDate);
+        DB_Connection db = new DB_Connection();
+
+        try {
+            ResultSet rs = db.getResultSet(sql);
+
+            if (!rs.next()) {
+                sql = String.format("INSERT into receive(`Table`,`Name`,`Tel_Num`,`Number_Customer`,`Date`,`totalprice`) values(1,'%s','%s','%s','%s','%s')",Name.getText(),Telephone.getText(),CustomerNumber.getText(),sqlDate,subTotal.getText());
+                if(db.execute(sql)){
+                    System.out.println("Success");
+                }
+            }else {
+                int n = rs.getInt("Table");
+                System.out.println(n);
+                if (n == 3){
+                    System.out.println("Not more 3 table");
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Table Full");
+                    alert.setHeaderText(null);
+                    alert.setContentText(" Please Booking another day");
+                    alert.showAndWait();
+                }else {
+                    sql = String.format("INSERT into receive(`Table`,`Name`,`Tel_Num`,`Number_Customer`,`Date`,`totalprice`) values('%d','%s','%s','%s','%s','%s')",(n+1),Name.getText(),Telephone.getText(),CustomerNumber.getText(),sqlDate,subTotal.getText());
+                    if (!db.execute(sql))return;
+                    System.out.println("Insert Success");
+
+                    booking in = new booking( new Date(), lineItems,Name.getText(),Telephone.getText(),date);
+                    // load next page
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Booking.fxml"));
+                    BookingReceipt br = new BookingReceipt(in);
+                    loader.setController(br);
+                    Scene scene = new Scene(loader.load());
+                    Stage popup = new Stage();
+                    popup.initStyle(StageStyle.TRANSPARENT);
+                    popup.setScene(scene);
+                    popup.show();
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
         // clear menuList
         ListOrder.getItems().clear();
         Name.clear();
         Telephone.clear();
         CustomerNumber.clear();
-
-
+        subTotal.setText(null);
     }
 
     @FXML
@@ -265,6 +304,8 @@ public class MakeReservationControllers {
 
         updateSubtotal();
     }
+
+
 }
 
 

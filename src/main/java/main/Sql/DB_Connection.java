@@ -11,7 +11,7 @@ public class DB_Connection {
     private ResultSet rs = null;
     // ---------------------------------------------------------------
     // ----------------URL สำหรับเชื่อมฐานข้อมูลบน Server-------------------
-    private String url = "jdbc:mysql://localhost:3306/carparkdatabase";
+    private String url = "jdbc:mysql://localhost:3306/eaglerestaurant";
     // ---------------------------------------------------------------
     //----------------------User ที่ใช้ Database-------------------------
     private String username = "root";

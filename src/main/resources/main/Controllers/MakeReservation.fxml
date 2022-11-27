@@ -25,7 +25,6 @@
                         <Font size="24.0" />
                     </font>
                 </Label>
-                <Button fx:id="ManageMenu" layoutX="399.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#ManageMenuClick" prefHeight="27.0" prefWidth="130.0" styleClass="button3" stylesheets="@../../CSS/fullpackstyling.css" text="Manage Menu" />
             </children>
         </Pane>
         <Pane layoutX="556.0" prefHeight="572.0" prefWidth="239.0" style="-fx-background-color: #020C1D;">

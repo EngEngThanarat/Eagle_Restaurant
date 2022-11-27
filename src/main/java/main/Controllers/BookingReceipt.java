@@ -62,6 +62,7 @@ public class BookingReceipt implements Initializable {
             ln.setCost(item.getPrice());
             list.getItems().add(ln);
         }
+        this.BillNumber.setText(bk.getInvoiceID());
     }
 
     public Label getBillNumber() {
