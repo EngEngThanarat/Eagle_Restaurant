@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.HBox?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" type="HBox" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+      <Label fx:id="NameItem" prefHeight="18.0" prefWidth="98.0" text="Name">
+         <HBox.margin>
+            <Insets left="1.0" top="8.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="CostItem" prefHeight="18.0" prefWidth="43.0" text="Cost">
+         <HBox.margin>
+            <Insets left="2.0" top="8.0" />
+         </HBox.margin>
+      </Label>
+      <Spinner fx:id="QuantityItem" prefHeight="26.0" prefWidth="53.0">
+         <HBox.margin>
+            <Insets top="2.0" />
+         </HBox.margin>
+      </Spinner>
+</fx:root>

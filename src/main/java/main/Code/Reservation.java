@@ -8,6 +8,8 @@ import java.util.Date;
 import java.util.UUID;
 
 public class Reservation {
+
+    private double subTotal;
     private Menu menu[];
     private Customer customer;
     private Table table;
@@ -67,13 +69,24 @@ public class Reservation {
     }
 
 
-    public Reservation(Customer customer, Table table, Date reserveDate, String waterType) {
+    public Reservation(Customer customer, Table table, Date reserveDate) {
         this.customer = customer;
         this.table = table;
         this.reserveDate = reserveDate;
-        this.waterType = waterType;
         this.ReservationID = UUID.randomUUID().hashCode();
-        this.waterType = waterType;
+    }
+
+    public Reservation(Date date,LineItem item[]){
+        double subTotal = 0;
+        for (int i = 0; i < item.length; i++) {
+            subTotal += item[i].getSubtotal();
+        }
+
+        setSubTotal(subTotal);
+    }
+
+    public void setSubTotal(double subTotal){
+        this.subTotal = subTotal;
     }
 
     public void orderMenu(Menu[] menu) {

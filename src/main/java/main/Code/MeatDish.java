@@ -2,8 +2,8 @@ package main.Code;
 
 public class MeatDish extends Menu{
 
-        public MeatDish(String detail, String list, int price, String name) {
-            super(detail, list, price, name);
+        public MeatDish( String name,double price ) {
+            super( name,price);
         }
 
         @Override

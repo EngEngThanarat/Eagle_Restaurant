@@ -43,7 +43,7 @@ private Reservation reservation;
         // Check reservation date must more than three days
         if(Math.abs(reserveDate.getTime() - new Date().getTime()) > 3*24*60*60*1000){
             if (table.isAvailable()){
-                this.reservation = new Reservation( this, table, reserveDate, waterType);
+                this.reservation = new Reservation( this, table, reserveDate);
                 table.setAvailable(false);
                 // Eng Add To GUI
                 return true;
