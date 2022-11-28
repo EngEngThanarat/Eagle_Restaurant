@@ -149,6 +149,8 @@ public class MakeReservationControllers {
             lineItems[i] = new LineItem(menuName, menuAmount, price);
         }
 
+
+
         ZoneId defaultZoneId = ZoneId.systemDefault();
         Date d = Date.from(date.atStartOfDay(defaultZoneId).toInstant());
         java.sql.Date sqlDate = new java.sql.Date(d.getTime());
@@ -293,12 +295,12 @@ public class MakeReservationControllers {
 
     @FXML
     void orderWater2click(MouseEvent event) {
-        setMenu("WHISKEY SOUR",139.00,"Drink");
+        setMenu("Whiskey sour",139.00,"Drink");
     }
 
     @FXML
     void orderWater3click(MouseEvent event) {
-        setMenu("BLUE MARGARITA",169.00, "Drink");
+        setMenu("Blue Magarita",169.00, "Drink");
     }
 
     private void updateSubtotal(){

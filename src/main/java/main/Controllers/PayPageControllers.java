@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import main.Code.payReceipt;
 import main.Code.temp;
 import main.Sql.DB_Connection;
 
@@ -57,6 +58,14 @@ public class PayPageControllers extends Node implements Initializable {
                 int total = Integer.parseInt(Total.getText());
 
                 if (amount >= total) {
+
+                        payReceipt.Bill = temp.selectedID;
+                        payReceipt.Cash  = String.valueOf(amount);
+                        payReceipt.Change = String.valueOf(amount - total);
+                        payReceipt.Date = temp.date;
+                        payReceipt.SubTotal = String.valueOf(total);
+                        payReceipt.Table = temp.selectedTable;
+
                         Parent root = null;
                         root = FXMLLoader.load(getClass().getResource("Receipt.fxml"));
                         Scene scene = new Scene(root);

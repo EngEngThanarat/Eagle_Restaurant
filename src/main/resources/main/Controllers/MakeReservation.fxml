@@ -119,9 +119,9 @@
                                         </ImageView>
                                     </children>
                                 </Pane>
-                                <Button fx:id="orderMain1" layoutX="14.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderMain1click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Order" />
-                                <Button fx:id="orderMain2" layoutX="193.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderMain2click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Order" />
-                                <Button fx:id="orderMain3" layoutX="372.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderMain3click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Order" />
+                                <Button fx:id="orderMain1" layoutX="14.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderMain1click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Fish with Sauce" />
+                                <Button fx:id="orderMain2" layoutX="193.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderMain2click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Mashed Potato" />
+                                <Button fx:id="orderMain3" layoutX="372.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderMain3click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Scallop Roll" />
                             </children>
                         </AnchorPane>
                     </content>
@@ -157,9 +157,9 @@
                                         </ImageView>
                                     </children>
                                 </Pane>
-                                <Button fx:id="orderDessert1" layoutX="14.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderDessert1click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Order" />
-                                <Button fx:id="orderDessert2" layoutX="193.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderDessert2click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Order" />
-                                <Button fx:id="orderDessert3" layoutX="372.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderDessert3" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Order" />
+                                <Button fx:id="orderDessert1" layoutX="14.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderDessert1click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Croissant" />
+                                <Button fx:id="orderDessert2" layoutX="193.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderDessert2click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Panna Cotta Syrup" />
+                                <Button fx:id="orderDessert3" layoutX="372.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderDessert3" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Pancake with Salad" />
                             </children>
                         </AnchorPane>
                     </content>
@@ -195,9 +195,9 @@
                                         </ImageView>
                                     </children>
                                 </Pane>
-                                <Button fx:id="orderWater1" layoutX="14.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderWater1click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Order" />
-                                <Button fx:id="orderWater2" layoutX="193.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderWater2click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Order" />
-                                <Button fx:id="orderWater3" layoutX="372.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderWater3click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Order" />
+                                <Button fx:id="orderWater1" layoutX="14.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderWater1click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Refill Soft Drink" />
+                                <Button fx:id="orderWater2" layoutX="193.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderWater2click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Whiskey sour" />
+                                <Button fx:id="orderWater3" layoutX="372.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#orderWater3click" prefHeight="27.0" prefWidth="172.0" styleClass="button5" stylesheets="@../../CSS/fullpackstyling.css" text="Blue Magarita" />
                             </children>
                         </AnchorPane>
                     </content>

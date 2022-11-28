@@ -51,12 +51,12 @@
                         <Insets left="10.0" />
                      </padding>
                      <HBox.margin>
-                        <Insets left="10.0" top="10.0" />
+                        <Insets left="108.0" top="10.0" />
                      </HBox.margin>
                   </Button>
                   <Button fx:id="CancelReservation" mnemonicParsing="false" onMouseClicked="#CancelClicked" prefHeight="40.0" prefWidth="234.0" styleClass="button4" stylesheets="@../../CSS/fullpackstyling.css" text="CANCEL RESERVATION" textAlignment="CENTER" textFill="WHITE">
                      <HBox.margin>
-                        <Insets right="10.0" top="10.0" />
+                        <Insets left="108.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </Button>
                </children>

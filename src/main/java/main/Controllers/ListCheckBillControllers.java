@@ -12,6 +12,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import main.Code.Customer;
+import main.Code.LineItem;
+import main.Code.payReceipt;
 import main.Code.temp;
 import main.Sql.DB_Connection;
 
@@ -66,6 +68,7 @@ public class ListCheckBillControllers implements Initializable {
         // add table view select listener
         table.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
+
                 CheckOut.setDisable(false);
             }else CheckOut.setDisable(true);
         });
@@ -84,16 +87,36 @@ public class ListCheckBillControllers implements Initializable {
         DB_Connection db = new DB_Connection();
         ResultSet rs ;
         int id = 0;
+        String Date = "";
+        String Table = "";
         try{
             rs = db.getResultSet(sql);
             while (rs.next()){
                 id = rs.getInt("bill_id");
+                Date = rs.getString("Date");
+                Table = rs.getString("Table");
             }
         }catch (Exception e){
             e.printStackTrace();
         }
 
         temp.selectedID = String.valueOf(id);
+        temp.date = Date;
+        temp.selectedTable = Table;
+
+        // select lineitem from database
+        sql = String.format("select * from lineitem where bill_id='%s'",temp.selectedID);
+        ObservableList<LineItem> list = FXCollections.observableArrayList();
+        try{
+            rs = db.getResultSet(sql);
+            while (rs.next()){
+                list.add(new LineItem(rs.getString("name"),rs.getInt("qty"),rs.getDouble("price")));
+            }
+        }catch (Exception e){
+
+        }
+
+        payReceipt.lineItems = list;
 
         Parent root = CheckOut.getParent().getParent().getParent();
 
