@@ -93,11 +93,10 @@ public class MakeReservationControllers {
         LocalDate date = ChooseDate.getValue();
         LocalDate now = LocalDate.now();
 
-        long sub = ChronoUnit.DAYS.between(now,date);
+        long sub = ChronoUnit.DAYS.between(now, date);
 
         System.out.println(sub);
-        if(sub < 3)
-        {
+        if (sub < 3) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Missing Date");
             alert.setHeaderText(null);
@@ -105,19 +104,19 @@ public class MakeReservationControllers {
             alert.showAndWait();
         }
         // Check TextField
-        else if (Name.getText() == null){
+        else if (Name.getText() == null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Input Customer name");
             alert.setHeaderText(null);
             alert.setContentText(" Please Input Customer name");
             alert.showAndWait();
-        }else if (Telephone.getText() == null){
+        } else if (Telephone.getText() == null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Input Customer name");
             alert.setHeaderText(null);
             alert.setContentText(" Please Input telephone number");
             alert.showAndWait();
-        }else if (CustomerNumber.getText() == null){
+        } else if (CustomerNumber.getText() == null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Input Customer name");
             alert.setHeaderText(null);
@@ -134,15 +133,15 @@ public class MakeReservationControllers {
             String menuName = ((Label) line.getChildren().get(0)).getText();
             double price = Double.parseDouble(((Label) line.getChildren().get(1)).getText());
             int amount = ((Spinner<Integer>) line.getChildren().get(2)).getValue();
-            switch (ln.getType()){
-                case "Main" ->{
-                    Menu menu = new MeatDish(menuName,price);
+            switch (ln.getType()) {
+                case "Main" -> {
+                    Menu menu = new MeatDish(menuName, price);
                 }
                 case "Dessert" -> {
-                    Menu menu = new Dessert(menuName,price);
+                    Menu menu = new Dessert(menuName, price);
                 }
-                case "Drink" ->{
-                    Menu menu = new water(menuName,price);
+                case "Drink" -> {
+                    Menu menu = new water(menuName, price);
                 }
             }
             Spinner<Integer> menuSpinner = (Spinner<Integer>) line.getChildren().get(2);
@@ -154,33 +153,73 @@ public class MakeReservationControllers {
         Date d = Date.from(date.atStartOfDay(defaultZoneId).toInstant());
         java.sql.Date sqlDate = new java.sql.Date(d.getTime());
 
-        String sql = String.format("SELECT `Table` FROM receive WHERE `Date` = '%s' ORDER BY `Table` DESC ;",sqlDate);
+        String sql = String.format("SELECT `Table` FROM receive WHERE `Date` = '%s' ORDER BY `Table` DESC ;", sqlDate);
         DB_Connection db = new DB_Connection();
 
         try {
             ResultSet rs = db.getResultSet(sql);
 
             if (!rs.next()) {
-                sql = String.format("INSERT into receive(`Table`,`Name`,`Tel_Num`,`Number_Customer`,`Date`,`totalprice`) values(1,'%s','%s','%s','%s','%s')",Name.getText(),Telephone.getText(),CustomerNumber.getText(),sqlDate,subTotal.getText());
-                if(db.execute(sql)){
+                sql = String.format("INSERT into receive(`Table`,`Name`,`Tel_Num`,`Number_Customer`,`Date`,`totalprice`) values(1,'%s','%s','%s','%s','%s')", Name.getText(), Telephone.getText(), CustomerNumber.getText(), sqlDate, subTotal.getText());
+                if (db.execute(sql)) {
                     System.out.println("Success");
+
+                    // select last id
+                    sql = "SELECT bill_id FROM receive ORDER BY bill_id DESC LIMIT 1";
+                    rs = db.getResultSet(sql);
+                    rs.next();
+                    int bill_id = rs.getInt("bill_id");
+
+                    // loop for insert invoice items
+                    for (int i = 0; i < lineItems.length; i++) {
+                        sql = String.format("INSERT into lineitem(`bill_id`,`name`,`price`,`qty`) values('%d','%s','%s','%s')",bill_id, lineItems[i].getMenu(), lineItems[i].getSubtotal(), lineItems[i].getQuantity());
+                        System.out.println(sql);
+                        if (!db.execute(sql)) return;
+                        System.out.println("Insert lineitem success");
+                    }
+
+                    booking in = new booking(new Date(), lineItems, Name.getText(), Telephone.getText(), date);
+                    // load next page
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Booking.fxml"));
+                    BookingReceipt br = new BookingReceipt(in);
+                    loader.setController(br);
+                    Scene scene = new Scene(loader.load());
+                    Stage popup = new Stage();
+                    popup.initStyle(StageStyle.TRANSPARENT);
+                    popup.setScene(scene);
+                    popup.show();
                 }
-            }else {
+            } else {
                 int n = rs.getInt("Table");
                 System.out.println(n);
-                if (n == 3){
+                if (n == 3) {
                     System.out.println("Not more 3 table");
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Table Full");
                     alert.setHeaderText(null);
                     alert.setContentText(" Please Booking another day");
                     alert.showAndWait();
-                }else {
-                    sql = String.format("INSERT into receive(`Table`,`Name`,`Tel_Num`,`Number_Customer`,`Date`,`totalprice`) values('%d','%s','%s','%s','%s','%s')",(n+1),Name.getText(),Telephone.getText(),CustomerNumber.getText(),sqlDate,subTotal.getText());
-                    if (!db.execute(sql))return;
-                    System.out.println("Insert Success");
+                } else {
+                    sql = String.format("INSERT into receive(`Table`,`Name`,`Tel_Num`,`Number_Customer`,`Date`,`totalprice`) values('%d','%s','%s','%s','%s','%s')", (n + 1), Name.getText(), Telephone.getText(), CustomerNumber.getText(), sqlDate, subTotal.getText());
+                    if (!db.execute(sql)) return;
+                    System.out.println("Insert receives Success");
 
-                    booking in = new booking( new Date(), lineItems,Name.getText(),Telephone.getText(),date);
+                    // select last id
+                    sql = "SELECT bill_id FROM receive ORDER BY bill_id DESC LIMIT 1";
+                    rs = db.getResultSet(sql);
+                    rs.next();
+                    int bill_id = rs.getInt("bill_id");
+
+                    // loop for insert invoice items
+                    for (int i = 0; i < lineItems.length; i++) {
+                        sql = String.format("INSERT into lineitem(`bill_id`,`name`,`price`,`qty`) values('%d','%s','%s','%s')",bill_id, lineItems[i].getMenu(), lineItems[i].getSubtotal(), lineItems[i].getQuantity());
+                        System.out.println(sql);
+                        if (!db.execute(sql)) return;
+                        System.out.println("Insert lineitem success");
+                    }
+
+
+                    booking in = new booking(new Date(), lineItems, Name.getText(), Telephone.getText(), date);
                     // load next page
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("Booking.fxml"));
                     BookingReceipt br = new BookingReceipt(in);

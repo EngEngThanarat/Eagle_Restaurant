@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controllers.ListCheckBillControllers">
    <children>
       <GridPane prefHeight="566.0" prefWidth="794.0">
@@ -29,11 +37,11 @@
                   </Label>
                </children>
             </HBox>
-            <TableView prefHeight="500.0" prefWidth="793.0" stylesheets="@../../CSS/fullpackstyling.css" GridPane.rowIndex="1">
+            <TableView fx:id="table" prefHeight="500.0" prefWidth="793.0" stylesheets="@../../CSS/fullpackstyling.css" GridPane.rowIndex="1">
                <columns>
-                  <TableColumn prefWidth="433.59998166561127" text="ชื่อลูกค้า" />
-                  <TableColumn prefWidth="198.39999389648438" text="หมายเลขติดต่อ" />
-                  <TableColumn minWidth="0.0" prefWidth="161.60001220703123" text="วันที่จอง" />
+                  <TableColumn fx:id="colName" prefWidth="433.59998166561127" text="ชื่อลูกค้า" />
+                  <TableColumn fx:id="colTel" prefWidth="198.39999389648438" text="หมายเลขติดต่อ" />
+                  <TableColumn fx:id="colDate" minWidth="0.0" prefWidth="161.60001220703123" text="วันที่จอง" />
                </columns>
             </TableView>
             <Button fx:id="CheckOut" mnemonicParsing="false" onMouseClicked="#CheckOutClicked" prefHeight="40.0" prefWidth="234.0" styleClass="button3" stylesheets="@../../CSS/fullpackstyling.css" text="Check Out" textAlignment="CENTER" GridPane.rowIndex="2">

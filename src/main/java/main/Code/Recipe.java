@@ -1,70 +1,51 @@
 package main.Code;
 
+import java.time.LocalDate;
 import java.util.Date;
 
-public class Recipe {
-private  int ReceiveID;
-private Reservation reservation;
-private  int totalPrice;
-private Date Receive_Date;
+public class Recipe extends invoice {
 
+    private LocalDate date;
+    private LineItem item[];
 
+    private double Money;
 
-    public int getReceive() {
-        return ReceiveID;
+    private double change;
+
+    public Recipe(Date date, LineItem item[], LocalDate Date, double Total , double Money){
+        super(date);
+        this.item = item;
+        this.date = Date;
+        this.Money = Money;
+
+        double subTotal = 0;
+        for (int i = 0; i < item.length; i++) {
+            subTotal += item[i].getSubtotal();
+        }
+
+        setSubTotal(subTotal);
+        double c = getMoney();
+        change = c - subTotal;
+        this.change = change;
     }
 
-    public void setReceive(int receive) {
-        ReceiveID = receive;
+    public LineItem[] getItem() {
+        return item;
     }
 
-    public Reservation getReservation() {
-        return reservation;
+    public void setItem(LineItem[] item) {
+        this.item = item;
     }
 
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
+    public LocalDate getDate(){
+        return date;
     }
 
-    public int getTotalPrice() {
-        return totalPrice;
+    public double getMoney(){
+        return Money;
     }
 
-    public void setTotalPrice(int totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public Date getReceive_Date() {
-        return Receive_Date;
-    }
-
-    public void setReceive_Date(Date receive_Date) {
-        this.Receive_Date = receive_Date;
-    }
-
-    public Recipe(int receive, Reservation reservation, int totalPrice, Date receive_Date) {
-        ReceiveID = receive;
-        this.reservation = reservation;
-        this.totalPrice = totalPrice;
-        this.Receive_Date = receive_Date;
-    }
-
-    @Override
-    public String toString() {
-        return "Recipe{" +
-                "ReceiveID=" + ReceiveID +
-                ", reservation=" + reservation +
-                ", totalPrice=" + totalPrice +
-                ", Receive_Date=" + Receive_Date +
-                '}';
-    }
-
-    public void printRecipe() {
-        System.out.println("Recipe{" +
-                "ReceiveID=" + ReceiveID +
-                ", reservation=" + reservation +
-                ", totalPrice=" + totalPrice +
-                ", Receive_Date=" + Receive_Date +
-                '}');
+    public double getChange(){
+        return change;
     }
 }

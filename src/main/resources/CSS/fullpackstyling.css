@@ -134,7 +134,7 @@
 .table-view .cell{
    -fx-cell-size: 30;
   -fx-alignment: center_left;
-  -fx-text-fill: #FFFF;
+  -fx-text-fill: #000;
 }
 
 .table-row-cell:selected {

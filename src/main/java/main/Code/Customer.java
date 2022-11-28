@@ -1,120 +1,51 @@
 package main.Code;
 
-import java.util.Date;
-import java.util.UUID;
+import javafx.beans.property.SimpleStringProperty;
+
 public class Customer {
-private int Telephone;
-private String name;
-private Reservation reservation;
+    private SimpleStringProperty name;
+    private SimpleStringProperty tel;
+    private SimpleStringProperty date;
 
-    public int getTelephone() {
-        return Telephone;
-    }
-
-    public void setTelephone(int telephone) {
-        Telephone = telephone;
+    public Customer(String name, String tel, String date) {
+        this.name = new SimpleStringProperty(name);
+        this.tel = new SimpleStringProperty(tel);
+        this.date = new SimpleStringProperty(date);
     }
 
     public String getName() {
-        return name;
+        return name.get();
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name.set(name);
     }
 
-    public Reservation getReservation() {
-        return reservation;
+    public String getTel() {
+        return tel.get();
     }
 
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
+    public void setTel(String tel) {
+        this.tel.set(tel);
     }
 
-    public Customer(int telephone, String name) {
-        Telephone = telephone;
-        this.name = name;
-
-
-    }
-    // Customer create a reservation
-    public boolean createReservation(Table table, Date reserveDate, String waterType){
-
-        // Check reservation date must more than three days
-        if(Math.abs(reserveDate.getTime() - new Date().getTime()) > 3*24*60*60*1000){
-            if (table.isAvailable()){
-                this.reservation = new Reservation( this, table, reserveDate);
-                table.setAvailable(false);
-                // Eng Add To GUI
-                return true;
-            }else {
-                System.out.println("Table is not available");
-                // Eng Add To GUI
-                return false;
-            }
-        }else {
-            System.out.println("Reservation date must more than three days");
-            // Eng Add To GUI
-            return false;
-        }
-
-
+    public String getDate() {
+        return date.get();
     }
 
-    // Customer cancel a reservation
-    public void cancelReservation(){
-        this.reservation = null;
+    public void setDate(String date) {
+        this.date.set(date);
     }
 
-    // Customer order a menu
-    public void orderMenu(Menu[] menu){
-        this.reservation.orderMenu(menu);
+    public SimpleStringProperty nameProperty() {
+        return name;
     }
 
-    // Customer check in
-    public void checkIn(){
-        this.reservation.checkIn();
+    public SimpleStringProperty telProperty() {
+        return tel;
     }
 
-    // Customer print the reservation
-    public void printReservation(){
-        // Statement
+    public SimpleStringProperty dateProperty() {
+        return date;
     }
-
-    // Customer print the bill
-    public void printBill(){
-        // Statement
-    }
-   // customer print recipe
-    public Recipe printRecipe(){
-        // calculate total price
-        int totalPrice = 0;
-        for (Menu menu : this.reservation.getMenu()) {
-            switch (menu.getClass().getSimpleName()){
-                case "Dessert":
-                    totalPrice += ((Dessert) menu).getPrice()-((Dessert) menu).getPrice()*((Dessert) menu).getDiscount();
-                    break;
-                case "water":
-                    if (this.reservation.getWaterType().equals("refill")){
-                        totalPrice += 35;
-                    }else {
-                        totalPrice += ((water) menu).getPrice();
-                    }
-                    break;
-                case "MainDish":
-                    totalPrice += ((MeatDish) menu).getPrice()-((MeatDish) menu).getPrice()*((MeatDish) menu).getDiscount();
-                    break;
-                default:
-                    totalPrice += menu.getPrice();
-                    break;
-            }
-        }
-        Recipe recipe = new Recipe(UUID.randomUUID().hashCode(),this.reservation,totalPrice,new Date());
-        recipe.printRecipe();
-        this.reservation.getTable().setAvailable(true);
-        return recipe;
-        // Eng Add To GUI
-    }
-
-
 }
